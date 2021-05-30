@@ -1,10 +1,15 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <b-container fluid>
+      <b-row>
+        <b-col col sm="3" lg="2" align-self="stretch" class="sidebar-view vh-100">
+          <Sidebar/>
+        </b-col>
+        <b-col align-self="stretch">
+          <router-view/>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -14,7 +19,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #055bb1;
 }
 #nav {
   padding: 30px;
@@ -27,3 +32,12 @@
   }
 }
 </style>
+
+<script>
+import Sidebar from '@/components/Sidebar.vue'
+export default {
+  components: {
+    Sidebar
+  }
+}
+</script>
